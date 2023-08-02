@@ -11,7 +11,7 @@ class TextToTokens:
     
     def __call__(self, input_text: Union[str, list]) -> list:
         phons = self.phonemizer(input_text)
-        tokens = self.tokenizer(phons)
+        tokens = self.tokenizer(" ".join(phons))
         return tokens
     
     @classmethod
