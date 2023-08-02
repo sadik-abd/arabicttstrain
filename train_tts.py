@@ -89,7 +89,7 @@ def validate(model,
 parser = basic_train_parser()
 args = parser.parse_args()
 
-config = TrainingConfigManager(config_path=args.config)
+config = TrainingConfigManager(config_path="/content/arabicttstrain/config/training_config.yaml")
 config_dict = config.config
 config.create_remove_dirs(clear_dir=args.clear_dir,
                           clear_logs=args.clear_logs,
