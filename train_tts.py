@@ -96,8 +96,8 @@ config.create_remove_dirs(clear_dir=args.clear_dir,
                           clear_weights=args.clear_weights)
 config.dump_config()
 config.print_config()
-
-model = config.get_model()
+from model.models import ForwardTransformer
+model = ForwardTransformer.load_model("/content/arabicttstrain/tts_model")
 config.compile_model(model)
 
 data_prep = TTSPreprocessor.from_config(config=config,
