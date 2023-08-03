@@ -147,7 +147,7 @@ if not args.skip_phonemes:
     def process_phonemes(file_id):
         text = metadatareader.text_dict[file_id]
         try:
-            phon = text_proc.phonemizer(text)
+            phon = text_proc.phonemizer(text.split())
         except Exception as e:
             print(f'{e}\nFile id {file_id}')
             raise BrokenPipeError
