@@ -158,7 +158,7 @@ if not args.skip_phonemes:
     phonemized_data = {}
     phon_iter = p_uimap(process_phonemes, metadata_file_ids)
     for (file_id, phonemes) in phon_iter:
-        phonemized_data.update({file_id: phonemes})
+        phonemized_data.update({file_id: " ".join(phonemes)})
     
     print('\nPhonemized metadata samples:')
     for i in sample_items:
