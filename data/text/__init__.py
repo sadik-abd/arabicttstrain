@@ -10,8 +10,11 @@ class TextToTokens:
         self.tokenizer = tokenizer
     
     def __call__(self, input_text: Union[str, list]) -> list:
-        phons = self.phonemizer(input_text)
-        tokens = self.tokenizer(" ".join(phons))
+        phn = ""
+        for txt in input_text.split("."):
+            phons = self.phonemizer(txt)
+            phn += " ".join(phons) + ". "
+        tokens = self.tokenizer(phn)
         return tokens
     
     @classmethod
